@@ -1,0 +1,17 @@
+{
+    "nome": "",
+    "descricao": "",
+    "sistema": "",
+    "atributos":{
+            "STR":0,
+            "DES":0,
+            "CON":0,
+            "WIS":0,
+            "INT":0,
+            "CAR":0
+    },
+    "nivel": 0 ,
+    "classe": "",
+    "raca": "",
+    "campanha": "none"
+}

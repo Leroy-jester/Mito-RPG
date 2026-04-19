@@ -1,0 +1,116 @@
+.ficha-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    background: white;
+}
+
+.ficha-container.DnD,
+.ficha-container.Tor20 {
+    background:
+        linear-gradient(rgba(255,248,220,0.94), rgba(245,222,179,0.94)),
+        url("/paper-texture.jpg");
+    background-size: cover;
+    color: #3b2a1a;
+    border: 2px solid #8b5a2b;
+    box-shadow: 0 8px 24px rgba(80, 50, 20, 0.2);
+}
+
+.ficha-container.OP {
+    background-color: #0a0f0a;
+    color: #86ff86;
+    border: 2px solid #1f8f1f;
+    box-shadow: 0 0 18px rgba(80, 255, 80, 0.15);
+    font-family: "Courier New", monospace;
+}
+
+.ficha-container.OP h1,
+.ficha-container.OP h2,
+.ficha-container.OP p,
+.ficha-container.OP strong,
+.ficha-container.OP span,
+.ficha-container.OP a {
+    color: #86ff86;
+}
+
+.ficha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ficha-imagem {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.sistema {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.descricao {
+    margin: 16px 0;
+    line-height: 1.6;
+}
+
+.infos-gerais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.atributos-box {
+    margin-top: 24px;
+}
+
+.atributos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.atributo-card {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.ficha-container.OP .atributo-card {
+    background: rgba(134,255,134,0.08);
+    border: 1px solid rgba(134,255,134,0.2);
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.acoes button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6c5ce7;
+    color: white;
+}
+
+.acoes .danger {
+    background: #e74c3c;
+}

@@ -1,0 +1,194 @@
+.campanha-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    color: #222;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* DnD e Tor20 = pergaminho/papel */
+.campanha-container.DnD,
+.campanha-container.Tor20 {
+    background:
+        linear-gradient(rgba(255, 248, 220, 0.94), rgba(245, 222, 179, 0.94)),
+        url("/paperTexture.jpg");
+    background-size: cover;
+    color: #3b2a1a;
+    border: 2px solid #8b5a2b;
+    box-shadow: 0 8px 24px rgba(80, 50, 20, 0.2);
+}
+
+.campanha-container.DnD h1,
+.campanha-container.Tor20 h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #5a2d0c;
+}
+
+/* Ordem Paranormal = terminal retrô */
+.campanha-container.OP {
+    background-color: #0a0f0a;
+    color: #86ff86;
+    border: 2px solid #1f8f1f;
+    box-shadow: 0 0 18px rgba(80, 255, 80, 0.15);
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.campanha-container.OP h1,
+.campanha-container.OP h2,
+.campanha-container.OP p,
+.campanha-container.OP span,
+.campanha-container.OP strong,
+.campanha-container.OP a {
+    color: #86ff86;
+}
+
+.campanha-container.OP h1,
+.campanha-container.OP h2,
+.campanha-container.OP button {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sistema {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.descricao {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.campanha-container button,
+.campanha-container .btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6c5ce7;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 110px;
+    transition: 0.2s ease;
+}
+
+.campanha-container button:hover,
+.campanha-container .btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.95);
+}
+
+.campanha-container .danger {
+    background: #e74c3c;
+}
+
+.campanha-container .danger:hover {
+    filter: brightness(0.9);
+}
+
+/* Sobrescrita dos botões no tema OP */
+.campanha-container.OP button,
+.campanha-container.OP .btn {
+    background: #0f1a0f;
+    color: #86ff86;
+    border: 1px solid #2c9c2c;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(80, 255, 80, 0.12);
+}
+
+.campanha-container.OP button:hover,
+.campanha-container.OP .btn:hover {
+    background: #132313;
+    color: #adffad;
+    filter: none;
+}
+
+.campanha-container.OP .danger {
+    background: #2a1010;
+    color: #ff8f8f;
+    border: 1px solid #a33;
+}
+
+.campanha-container.OP .danger:hover {
+    background: #341515;
+    color: #ffb3b3;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.fichas-campanha,
+.lista-fichas-disponiveis {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.campanha-container.OP .fichas-campanha,
+.campanha-container.OP .lista-fichas-disponiveis {
+    border-top: 1px solid rgba(134, 255, 134, 0.2);
+}
+
+.ficha-item,
+.ficha-disponivel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.campanha-container.OP .ficha-item,
+.campanha-container.OP .ficha-disponivel {
+    border-bottom: 1px solid rgba(134, 255, 134, 0.2);
+}
+
+.ficha-item-info,
+.ficha-disponivel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vazio {
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.campanha-container a {
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .campanha-container {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .ficha-item,
+    .ficha-disponivel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .campanha-container button,
+    .campanha-container .btn {
+        width: 100%;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+}

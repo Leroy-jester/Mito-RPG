@@ -1,0 +1,94 @@
+.page-container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container-lista {
+    margin-top: 20px;
+}
+
+.container-lista .h2 {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.fichas-hero {
+    position: relative;
+    height: 420px;
+    padding: 30px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+
+    background-image: url("/bg-hero-campanhas.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.fichas-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.3)
+    );
+}
+
+.fichas-hero h1,
+.fichas-hero div {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.fichas-hero p {
+    color: #ddd;
+    margin-bottom: 15px;
+    max-width: 400px;
+}
+
+.fichas-hero button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #6c5ce7;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fichas-hero button:hover {
+    background: #5a4bd1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.grid a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    justify-self: center;
+}
+
+@media (max-width: 600px) {
+    .fichas-hero {
+        height: auto;
+        padding: 20px;
+    }
+
+    .fichas-hero h1 {
+        font-size: 22px;
+    }
+}
