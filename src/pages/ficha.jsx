@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { personagemController } from "../components/controller";
 import { useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
@@ -38,6 +38,17 @@ export function Ficha() {
         navigate("/personagem");
     }
 
+    function toggleFavorito() {
+        const resultado = personagemController.toggleFavorito(id);
+
+        if (!resultado.ok) {
+            alert(resultado.erro);
+            return;
+        }
+
+        carregar();
+    }
+
     if (!personagem) {
         return <p>Personagem não encontrado</p>;
     }
@@ -53,6 +64,14 @@ export function Ficha() {
             />
 
             <div className={`ficha-container ${personagem.sistema}`}>
+                <button
+                    className={`favorito-btn ${personagem.favorito ? "ativo" : ""}`}
+                    onClick={toggleFavorito}
+                    title={personagem.favorito ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                >
+                    ★
+                </button>
+
                 <div className="ficha-header">
                     <div>
                         <h1>{personagem.nome}</h1>
@@ -107,8 +126,6 @@ export function Ficha() {
                         id={id}
                     />
                 )}
-
-                <br />
             </div>
         </div>
     );

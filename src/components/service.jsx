@@ -177,6 +177,30 @@ export const personagemService = {
         return { ok: false, erro: "Erro ao editar personagem" };
         }
     },
+
+    toggleFavorito(id) {
+        const personagem = personagemRepository.buscarPorId(id);
+
+        if (!personagem) {
+            return { ok: false, erro: "Personagem não encontrado" };
+        }
+
+        const atualizado = {
+            ...personagem,
+            favorito: !personagem.favorito
+        };
+
+        personagemRepository.editar(id, atualizado);
+
+        return { ok: true, data: atualizado };
+    },
+
+    listarFavoritos() {
+        const lista = personagemRepository.listar();
+        const favoritos = lista.filter(p => p.favorito);
+
+        return { ok: true, data: favoritos };
+    }
 };
 
 function validarCampanha(campanha) {

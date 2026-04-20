@@ -27,6 +27,14 @@ export const personagemController = {
   editarPersonagem(id, dadosAtualizados) {
     return personagemService.editar(id, dadosAtualizados);
   },
+  
+  toggleFavorito(id) {
+    return personagemService.toggleFavorito(id);
+  },
+
+  listarFavoritos() {
+      return personagemService.listarFavoritos();
+  }
 };
 
 export const campanhaController = {
