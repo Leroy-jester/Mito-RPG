@@ -129,6 +129,16 @@ src/
 
 ---
 
+## Dificuldades encontradas
+
+o problema do navbar, quando o barra de scrollar aparece ela diminui o navbar;
+
+melhorar o meu CRUD foi umas das partes mais difíceis, embora eu tenha reutilizado de um outro projeto eu pensei em melhorar, e fazer tratamento de caso de erro com indicações visuais;
+
+a parte do css para mim sempre foi o mais difícil, por isso fiz mais simples
+
+---
+
 ## Como rodar o projeto
 
 ```bash
