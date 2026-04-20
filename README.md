@@ -1,12 +1,12 @@
-# 🎲 Sistema de Fichas e Campanhas RPG
+# Sistema de Fichas e Campanhas RPG
 
 Aplicação web desenvolvida em React para criação, gerenciamento e organização de fichas de personagens e campanhas de RPG.
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-### 🧙 Fichas de Personagem
+### Fichas de Personagem
 - Criar, editar e remover fichas
 - Visualização detalhada com:
   - Nome, descrição
@@ -20,7 +20,7 @@ Aplicação web desenvolvida em React para criação, gerenciamento e organizaç
 
 ---
 
-### ⭐ Favoritos
+### Favoritos
 - Marcar fichas como favoritas
 - Botão de estrela ⭐ na ficha
 - Página dedicada `/favoritos`
@@ -28,7 +28,7 @@ Aplicação web desenvolvida em React para criação, gerenciamento e organizaç
 
 ---
 
-### 🗺️ Campanhas
+### Campanhas
 - Criar e gerenciar campanhas
 - Associar fichas à campanha
 - Filtro automático por sistema (DnD, OP, Tor20)
@@ -37,53 +37,56 @@ Aplicação web desenvolvida em React para criação, gerenciamento e organizaç
 
 ---
 
-### 🎨 Interface dinâmica por sistema
+### Interface dinâmica por sistema
 Cada sistema possui um estilo visual próprio:
 
-- 📜 **DnD / Tormenta20**
+- **DnD / Tormenta20**
   - Visual estilo papel antigo
   - Tons quentes e textura
 
-- 💻 **Ordem Paranormal**
+- **Ordem Paranormal**
   - Estilo terminal retrô
   - Fonte monospace
   - Cores verdes neon
 
 ---
 
-### 🔎 Busca e Filtros
+### Busca e Filtros
 - Busca por nome de ficha ou campanha
 - Filtro por sistema
 - Interface responsiva e amigável
 
 ---
 
-## 🧱 Arquitetura
+## Arquitetura
 
 O projeto segue uma separação em camadas:
 
+```
 components/
 ├── controller
 ├── service
 ├── repository
 
+```
 
-### 📦 Repository
+
+### Repository
 - Responsável pelo acesso ao `localStorage`
 - CRUD básico
 
-### ⚙️ Service
+### Service
 - Regras de negócio
 - Validações
 - Lógica de favoritos e campanhas
 
-### 🎮 Controller
+### Controller
 - Intermedia entre UI e Service
 - Retorna `{ ok, data, erro }`
 
 ---
 
-## 💾 Persistência
+## Persistência
 
 - Utiliza `localStorage`
 - Dados salvos automaticamente no navegador
@@ -91,7 +94,7 @@ components/
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - React
 - React Router DOM
@@ -100,31 +103,33 @@ components/
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
+```
 src/
-components/
-  NavBar
-  card
-  modal
-  /controller
-  /service
-  /repository
-
- pages/
- ficha
- fichas
- campanhas
- campanha
- favoritos
-
-styles/
- css files
-
+├── components/
+│   ├── NavBar
+│   ├── card
+│   ├── modal
+│   ├── controller/
+│   ├── service/
+│   └── repository/
+│
+├── pages/
+│   ├── home
+│   ├── ficha
+│   ├── fichas
+│   ├── campanhas
+│   ├── campanha
+│   └── favoritos
+│
+├── styles/
+│   └── css files
+```
 
 ---
 
-## ▶️ Como rodar o projeto
+## Como rodar o projeto
 
 ```bash
 # instalar dependências
