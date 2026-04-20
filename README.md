@@ -103,23 +103,23 @@ components/
 ## 📂 Estrutura do Projeto
 
 src/
-├── components/
-│ ├── NavBar
-│ ├── card
-│ ├── modal
-│ ├── /controller
-│ ├── /service
-│ └── /repository
-│
-├── pages/
-│ ├── ficha
-│ ├── fichas
-│ ├── campanhas
-│ ├── campanha
-│ └── favoritos
-│
-├── styles/
-│ └── css files
+components/
+  NavBar
+  card
+  modal
+  /controller
+  /service
+  /repository
+
+ pages/
+ ficha
+ fichas
+ campanhas
+ campanha
+ favoritos
+
+styles/
+ css files
 
 
 ---
