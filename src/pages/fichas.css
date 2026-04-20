@@ -8,11 +8,43 @@
     margin-top: 20px;
 }
 
-.container-lista .h2 {
-    width: fit-content;
-    margin: 0 auto;
+/* HEADER DA LISTA + BUSCA */
+.container-lista > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
+.container-lista .h2 {
+    width: fit-content;
+}
+
+/* INPUT DE BUSCA */
+.container-lista input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    min-width: 220px;
+    outline: none;
+    transition: 0.2s;
+    background: white;
+}
+
+/* FOCO */
+.container-lista input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+/* PLACEHOLDER */
+.container-lista input::placeholder {
+    color: #aaa;
+}
+
+/* HERO */
 .fichas-hero {
     position: relative;
     height: 420px;
@@ -68,6 +100,7 @@
     background: #5a4bd1;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
@@ -82,6 +115,7 @@
     justify-self: center;
 }
 
+/* RESPONSIVO */
 @media (max-width: 600px) {
     .fichas-hero {
         height: auto;
@@ -90,5 +124,15 @@
 
     .fichas-hero h1 {
         font-size: 22px;
+    }
+
+    .container-lista > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .container-lista input {
+        width: 100%;
+        min-width: 0;
     }
 }

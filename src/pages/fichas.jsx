@@ -9,6 +9,7 @@ import "./fichas.css";
 export function Fichas() {
     const [aberto, setAberto] = useState(false);
     const [personagens, setPersonagens] = useState([]);
+    const [buscar, setBuscar ] = useState('')
 
     function carregar() {
         const resultado = personagemController.listarPersonagens();
@@ -24,6 +25,10 @@ export function Fichas() {
     useEffect(() => {
         carregar();
     }, []);
+
+    const fichasFiltradas = personagens.filter((personagem) =>
+        personagem.nome.toLowerCase().includes(buscar.toLowerCase().trim())
+    );
 
     return (
         <div className="page">
@@ -57,12 +62,29 @@ export function Fichas() {
                 )}
 
                 <div className="container-lista">
-                    <h2 className="h2">Lista de fichas</h2>
+                    <div>
+                        <h2 className="h2">Lista de fichas</h2>
+                        
+                        <input
+                            type="text"
+                            placeholder="Buscar campanha"
+                            value={buscar}
+                            onChange={(e) => setBuscar(e.target.value)}
+                        />
+                    </div>
 
-                    {personagens.length === 0 && <p>Nenhuma ficha criada</p>}
+                    {fichasFiltradas.length === 0 ? (
+                        <div className="vazio-container">
+                            <h2>Nenhuma ficha encontrada</h2>
+                            <p>Crie sua primeira ficha para começar sua aventura.</p>
 
-                    <div className="grid">
-                        {personagens.map((p) => (
+                            <button onClick={() => setAberto(true)}>
+                                Criar ficha
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="grid">
+                        {fichasFiltradas.map((p) => (
                             <Link key={p.id} to={`/personagem/${p.id}`}>
                                 <CardFicha
                                     nome={p.nome}
@@ -73,6 +95,7 @@ export function Fichas() {
                             </Link>
                         ))}
                     </div>
+                    )}
                 </div>
             </div>
         </div>

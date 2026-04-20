@@ -109,7 +109,6 @@ export function Ficha() {
                 )}
 
                 <br />
-                <Link to="/personagem">Voltar</Link>
             </div>
         </div>
     );

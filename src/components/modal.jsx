@@ -495,20 +495,20 @@ export function ModalEditar({ fechar, id }) {
         onClick={(e) => e.stopPropagation()}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <label htmlFor="nomeEditar">
+        <label htmlFor="nomeFEditar">
           Nome:
           <input
-            id="nomeEditar"
+            id="nomeFEditar"
             type="text"
             placeholder="coloque aqui o novo nome do seu personagem"
             {...register("nome")}
           />
         </label>
 
-        <label htmlFor="descricaoEditar">
+        <label htmlFor="descricaoFEditar">
           Descrição:
           <input
-            id="descricaoEditar"
+            id="descricaoFEditar"
             type="text"
             placeholder="escreva aqui a descrição do seu personagem"
             {...register("descricao")}

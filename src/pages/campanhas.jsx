@@ -9,6 +9,8 @@ import "./campanhas.css";
 export function Campanhas() {
     const [aberto, setAberto] = useState(false);
     const [campanhas, setCampanhas] = useState([]);
+    const [busca, setBusca] = useState("");
+    const [filtro, setFiltro] = useState("");
 
     function carregar() {
         const resultado = campanhaController.listarCampanhas();
@@ -24,6 +26,16 @@ export function Campanhas() {
     useEffect(() => {
         carregar();
     }, []);
+
+    const campanhasFiltradas = campanhas.filter((campanha) => {
+        const nomeMatch = campanha.nome
+            .toLowerCase()
+            .includes(busca.toLowerCase().trim());
+
+        const sistemaMatch = filtro ? campanha.sistema === filtro : true;
+
+        return nomeMatch && sistemaMatch;
+    });
 
     return (
         <div className="page">
@@ -57,21 +69,46 @@ export function Campanhas() {
                 )}
 
                 <div className="container-lista">
-                    <h2 className="h2">Lista de campanhas</h2>
+                    <div>
+                        <h2 className="h2">Lista de campanhas</h2>
 
-                    {campanhas.length === 0 && <p>Nenhuma campanha criada</p>}
+                        <input
+                            type="text"
+                            placeholder="Buscar campanha"
+                            value={busca}
+                            onChange={(e) => setBusca(e.target.value)}
+                        />
 
-                    <div className="grid">
-                        {campanhas.map((campanha) => (
-                            <Link key={campanha.id} to={`/campanhas/${campanha.id}`}>
-                                <CardCampanha
-                                    nome={campanha.nome}
-                                    descricao={campanha.descricao}
-                                    sistema={campanha.sistema}
-                                />
-                            </Link>
-                        ))}
+                        <select value={filtro} onChange={(e) => setFiltro(e.target.value)}>
+                            <option value="">Todos os sistemas</option>
+                            <option value="DnD">DnD</option>
+                            <option value="OP">Ordem Paranormal</option>
+                            <option value="Tor20">Tormenta 20</option>
+                        </select>
                     </div>
+
+                    {campanhasFiltradas.length === 0 ? (
+                        <div className="vazio-container">
+                            <h2>Nenhuma campanha encontrada</h2>
+                            <p>Crie sua primeira campanha para começar sua aventura.</p>
+
+                            <button onClick={() => setAberto(true)}>
+                                Criar campanha
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="grid">
+                            {campanhasFiltradas.map((campanha) => (
+                                <Link key={campanha.id} to={`/campanhas/${campanha.id}`}>
+                                    <CardCampanha
+                                        nome={campanha.nome}
+                                        descricao={campanha.descricao}
+                                        sistema={campanha.sistema}
+                                    />
+                                </Link>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

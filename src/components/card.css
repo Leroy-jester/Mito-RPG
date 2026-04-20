@@ -113,3 +113,10 @@ background-image: url("/Ordem.jpg");
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+@media (max-width: 600px) {
+    .card, .cardC{
+        width: 240px;
+        height: 140px;
+    }
+}

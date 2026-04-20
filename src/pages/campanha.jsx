@@ -163,9 +163,6 @@ export function Campanha() {
             </div>
           ))}
         </div>
-
-        <br />
-        <Link to="/campanhas">Voltar</Link>
       </div>
     </div>
   );

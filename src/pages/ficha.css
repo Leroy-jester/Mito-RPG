@@ -95,6 +95,16 @@
     border: 1px solid rgba(134,255,134,0.2);
 }
 
+.ficha-container.OP .acoes button {
+    background: none;
+    color: #6c5ce7;
+}
+
+.ficha-container.OP .acoes .danger {
+    background: none;
+    color: #e74c3c;
+}
+
 .acoes {
     display: flex;
     gap: 10px;
