@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { personagemController } from "../components/controller";
+import { personagemController } from "../components/controller/controller";
 import { NavBar } from "../components/NavBar";
 import { CardFicha } from "../components/card";
-import "./fichas.css";
+import "../styles/fichas.css";
 
 export function Fichas_Favoritas() {
     const [favoritos, setFavoritos] = useState([]);

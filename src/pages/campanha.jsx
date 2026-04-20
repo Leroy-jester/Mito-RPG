@@ -1,8 +1,8 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
-import { campanhaController, personagemController } from "../components/controller";
+import { campanhaController, personagemController } from "../components/controller/controller";
 import { useEffect, useState } from "react";
-import "./campanha.css";
+import "../styles/campanha.css";
 import { ModalEditarCampanha } from "../components/modal";
 
 export function Campanha() {

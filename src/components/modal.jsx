@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import "./modal.css";
-import { personagemController, campanhaController } from "./controller";
+import "../styles/modal.css";
+import { personagemController, campanhaController } from "./controller/controller";
 import dado from "../assets/d20.png";
 
 export function Modal({ fechar }) {

@@ -1,4 +1,4 @@
-import { personagemService, campanhaService } from "./service";
+import { personagemService, campanhaService } from "../service/service";
 
 export const personagemController = {
   criarPersonagem(personagem) {

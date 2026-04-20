@@ -1,4 +1,4 @@
-import "./card.css"
+import "../styles/card.css"
 
 function truncar(texto, limite) {
         if (!texto) return "";

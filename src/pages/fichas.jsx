@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Modal } from "../components/modal";
 import { useState, useEffect } from "react";
-import { personagemController } from "../components/controller";
+import { personagemController } from "../components/controller/controller";
 import { CardFicha } from "../components/card";
 import { NavBar } from "../components/NavBar";
-import "./fichas.css";
+import "../styles/fichas.css";
 
 export function Fichas() {
     const [aberto, setAberto] = useState(false);

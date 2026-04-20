@@ -1,4 +1,4 @@
-import { personagemRepository, campanhaRepository } from "./repository";
+import { personagemRepository, campanhaRepository } from "../repository/repository";
 
 function campoVazio(valor) {
   return !valor || !String(valor).trim();

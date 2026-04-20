@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ModalCampanha } from "../components/modal";
 import { useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
-import { campanhaController } from "../components/controller";
+import { campanhaController } from "../components/controller/controller";
 import { CardCampanha } from "../components/card";
-import "./campanhas.css";
+import "../styles/campanhas.css";
 
 export function Campanhas() {
     const [aberto, setAberto] = useState(false);

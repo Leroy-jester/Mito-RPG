@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { personagemController } from "../components/controller";
+import { personagemController } from "../components/controller/controller";
 import { useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import { ModalEditar } from "../components/modal";
-import "./ficha.css";
+import "../styles/ficha.css";
 
 export function Ficha() {
     const { id } = useParams();
