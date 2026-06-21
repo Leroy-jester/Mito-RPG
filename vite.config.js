@@ -16,7 +16,8 @@ export default defineConfig({
       ],
 
       workbox: {
-        globPatterns: ["**/*.{js,css,html,png,jpg,jpeg,svg,ico}"]
+        globPatterns: ["**/*.{js,css,html,png,jpg,jpeg,svg,ico}"],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
       },
       manifest: {
         name: 'Mitos RPG',
